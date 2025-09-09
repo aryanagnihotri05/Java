@@ -111,6 +111,19 @@ public class LL {
         System.out.println();
     }
 
+    public void remove_duplicate_sorted(){
+        Node curr = head;
+        while(curr.next != null){
+            if (curr.value != curr.next.value){
+                curr = curr.next;
+            }
+            else{
+                Node temp = curr.next;
+                curr.next = temp.next;
+            }
+        }
+    }
+
     public class Node{
         private int value;
         private Node next;
