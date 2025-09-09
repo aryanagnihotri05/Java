@@ -1,6 +1,6 @@
 package Leetcode;
 
-public class p1 {
+public class problem_21 {
     public int removeDuplicates(int[] nums){
 
         if (nums.length == 0){
@@ -18,7 +18,7 @@ public class p1 {
 
     public static void main(String[] args) {
 
-        p1 p = new p1();
+        problem_21 p = new problem_21();
 
         int[] arr = {0,0,1,1,1,1,2,2,2,3,3,3};
 

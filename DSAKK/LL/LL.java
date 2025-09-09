@@ -113,7 +113,7 @@ public class LL {
 
     public void remove_duplicate_sorted(){
         Node curr = head;
-        while(curr.next != null){
+        while(curr != null && curr.next != null){
             if (curr.value != curr.next.value){
                 curr = curr.next;
             }
@@ -121,6 +121,29 @@ public class LL {
                 Node temp = curr.next;
                 curr.next = temp.next;
             }
+        }
+    }
+
+    public void remove_duplicate_sorted2(){
+        Node temp;
+        while(head != null && head.next != null && head.value == head.next.value){
+            int val = head.value;
+            while(head != null && head.value == val){
+                head = head.next;
+            }
+        }
+        Node curr = head;
+
+        while (curr != null && curr.next != null){
+            if (curr.next.next != null && curr.next.value == curr.next.next.value){
+                int val = curr.next.value;
+                while (curr.next != null && curr.next.value == val){
+                curr.next = curr.next.next;
+                }
+            }
+            else{
+                curr = curr.next;
+                }
         }
     }
 

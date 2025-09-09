@@ -20,7 +20,7 @@ public class Main {
 //        list.insertLast(3);
 //        list.insertMid(11,5);
         list.display();
-        list.remove_duplicate_sorted();
+        list.remove_duplicate_sorted2();
         list.display();
 //        int val1 = list.deleteFirst();
 //        System.out.println("Deleted: "+ val1);
