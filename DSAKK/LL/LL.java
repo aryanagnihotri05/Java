@@ -147,12 +147,57 @@ public class LL {
         }
     }
 
+    public static LL merge(LL list1, LL list2) {
+        // Dummy node to simplify edge cases
+        Node f = list1.head;
+        Node s = list2.head;
+
+        LL ans = new LL();
+        // Traverse both lists
+        while (f != null && s != null) {
+            if (f.value <= s.value) {
+                ans.insertLast(f.value);
+                f = f.next;
+            } else {
+                ans.insertLast(s.value);
+                s = s.next;
+            }
+        }
+        // Attach remaining part
+        while (f != null) {
+            ans.insertLast(f.value);
+            f = f.next;
+        }
+        while (s != null) {
+            ans.insertLast(s.value);
+            s = s.next;
+        }
+        return ans;
+    }
+
+    public boolean hasCycle(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public class Node{
         private int value;
         private Node next;
 
         public Node(int value){
             this.value = value;
+        }
+
+        public Node(){
         }
 
         public Node(int value, Node next){

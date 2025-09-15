@@ -1,28 +1,59 @@
 package Leetcode;
 
-public class problem_21 {
-    public int removeDuplicates(int[] nums){
 
-        if (nums.length == 0){
-            return 0;
-        }
-        int i = 0;
-        for(int j = 1; j < nums.length; j++){
-            if (nums[j] != nums[i]){
-                i++;
-                nums[i] = nums[j];
-            }
-        }
-        return i + 1;
+public class problem_21 {
+
+    private Node head;
+    private Node tail;
+    private int size;
+
+    public problem_21() {
+        this.size = 0;
     }
 
-    public static void main(String[] args) {
 
-        problem_21 p = new problem_21();
+    public Node mergeTwoLists(Node list1, Node list2) {
+        // Dummy node to simplify edge cases
+        Node dummy = new Node();
+        Node list3 = dummy;
 
-        int[] arr = {0,0,1,1,1,1,2,2,2,3,3,3};
+        // Traverse both lists
+        while (list1 != null && list2 != null) {
+            if (list1.value <= list2.value) {
+                list3.next = list1;
+                list1 = list1.next;
+            } else {
+                list3.next = list2;
+                list2 = list2.next;
+            }
+            list3 = list3.next;
+        }
 
-        int num = p.removeDuplicates(arr);
-        System.out.println(num);
+        // Attach remaining part
+        if (list1 != null) {
+            list3.next = list1;
+        } else {
+            list3.next = list2;
+        }
+
+        return dummy.next;
+    }
+
+    public class Node{
+        private int value;
+        private Node next;
+
+        public Node(int value){
+            this.value = value;
+        }
+
+        public Node(){
+
+        }
+
+        public Node(int value, Node next){
+            this.value = value;
+            this.next = next;
+        }
     }
 }
