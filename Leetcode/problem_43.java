@@ -1,6 +1,6 @@
 package Leetcode;
 
-public class problem_9 {
+public class problem_43 {
 
     public boolean isPalindrome(int x) {
         String str = String.valueOf(x);
@@ -35,7 +35,7 @@ public class problem_9 {
 
     public static void main(String[] args) {
 
-        problem_9 ans = new problem_9();
+        problem_43 ans = new problem_43();
         ans.isPalindrome(12121);
     }
 }
