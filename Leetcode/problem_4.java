@@ -35,7 +35,7 @@ public class problem_4 {
     public static void main(String[] args) {
         problem_4 problem4 = new problem_4();
         int[] num1 = {1, 2};
-        int[] num2 = {3,4,5,6,};
+        int[] num2 = {3,4,5,6};
         System.out.println(problem4.findMedianSortedArrays(num1, num2));
 
     }
