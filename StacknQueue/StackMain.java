@@ -1,6 +1,6 @@
 package StacknQueue;
 
-public class StateMain {
+public class StackMain {
     public static void main(String[] args) throws StackException {
         CustomStack stack = new DynamicStack(5);
 
